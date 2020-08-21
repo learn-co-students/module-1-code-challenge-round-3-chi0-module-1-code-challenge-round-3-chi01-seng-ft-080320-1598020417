@@ -10,6 +10,8 @@ For our purposes, a `Movie` has many `Roles`, a `Actor` has many `Roles`, and a 
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
+  Movie -< Role >- Actor
+
 ## Topics
 
 - Active Record Migrations
@@ -120,6 +122,10 @@ Use Active Record association macros and Active Record query methods where appro
   - returns a collection of all the `Movie` instances the actor has performed in that have a `box_office_earnings` of over $50,000,000
 - `Actor.most_successful`
   - returns *one* actor instance for the actor who has the highest total salary for all their roles
+
+  <!-- Role.all.max_by do |role_instance|
+  role_instance.salary  
+  end  
 
 ## Rubric
 
