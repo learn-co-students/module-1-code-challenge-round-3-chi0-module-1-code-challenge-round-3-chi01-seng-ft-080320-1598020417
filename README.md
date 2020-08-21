@@ -7,6 +7,7 @@ We have three models: `Movie`, `Role`, and `Actor`.
 For our purposes, a `Movie` has many `Roles`, a `Actor` has many `Roles`, and a `Role` belongs to a `Movie` and to an `Actor`.
 
 `Movie` - `Actor` is a many to many relationship.
+Movie -< Role >- Actor
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
