@@ -6,7 +6,7 @@ We have three models: `Movie`, `Role`, and `Actor`.
 
 For our purposes, a `Movie` has many `Roles`, a `Actor` has many `Roles`, and a `Role` belongs to a `Movie` and to an `Actor`.
 
-`Movie` - `Actor` is a many to many relationship.
+`Movie` -< Roles >- `Actor` is a many to many relationship.
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
@@ -76,30 +76,30 @@ Use Active Record association macros and Active Record query methods where appro
 
 #### Role
 
-- `Role#actor`
+X `Role#actor`
   - should return the `Actor` instance for this role
-- `Role#movie`
+X `Role#movie`
   - should return the `Movie` instance for this role
 
 #### Movie
 
-- `Movie#roles`
+X `Movie#roles`
   - returns a collection of all the roles for the movie
-- `Movie#actors`
+X `Movie#actors`
   - returns a collection of all the actors who performed in the movie
 
 #### Actor
 
-- `Actor#roles`
+X `Actor#roles`
   - should return a collection of all the roles that the actor has played
-- `Actor#movies`
+X `Actor#movies`
   - should return a collection of all the movies that the actor has performed in
 
 ### Aggregate and Association Methods
 
 #### Role
 
-- `Role#credit`
+X `Role#credit`   <Role.first.credit>
   - should return a string formatted as follows: `{insert character name}: Played by {insert actor name}`
 
 #### Movie
