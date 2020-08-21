@@ -8,6 +8,7 @@ For our purposes, a `Movie` has many `Roles`, a `Actor` has many `Roles`, and a 
 
 `Movie` - `Actor` is a many to many relationship.
 
+Movie ---< Role <--- Actor 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
 ## Topics
@@ -75,23 +76,27 @@ After creating the `roles` table using a migration, use the `seeds.rb` file to c
 Use Active Record association macros and Active Record query methods where appropriate (i.e. `has_many`, `has_many through`, and `belongs_to`).
 
 #### Role
-
+#Role.first.actor
 - `Role#actor`
   - should return the `Actor` instance for this role
+  #Role.first.movie 
 - `Role#movie`
   - should return the `Movie` instance for this role
 
 #### Movie
-
+  #Movie.first.roles
 - `Movie#roles`
   - returns a collection of all the roles for the movie
+  #Movie.first.actors
 - `Movie#actors`
   - returns a collection of all the actors who performed in the movie
 
 #### Actor
-
+#Actor.first.roles
 - `Actor#roles`
   - should return a collection of all the roles that the actor has played
+
+  #Actor.first.movies
 - `Actor#movies`
   - should return a collection of all the movies that the actor has performed in
 
@@ -99,7 +104,7 @@ Use Active Record association macros and Active Record query methods where appro
 
 #### Role
 
-- `Role#credit`
+X `Role#credit`
   - should return a string formatted as follows: `{insert character name}: Played by {insert actor name}`
 
 #### Movie
