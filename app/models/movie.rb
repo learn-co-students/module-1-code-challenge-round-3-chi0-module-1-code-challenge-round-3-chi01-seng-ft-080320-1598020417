@@ -2,9 +2,9 @@ class Movie < ActiveRecord::Base
     has_many :roles 
     has_many :actors, through: :roles 
 
-    def cast_role(actor, salary, character_name)
-        Role.create()
-    end 
+    # def cast_role(actor, salary, character_name)
+    #     Role.create(id: id, salary: salary, character_name: character_name)
+    # end 
 end
 
 # x- `Movie#roles`
