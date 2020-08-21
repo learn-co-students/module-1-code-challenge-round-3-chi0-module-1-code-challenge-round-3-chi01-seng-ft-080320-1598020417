@@ -1,6 +1,7 @@
 # This will delete any existing rows from the Movie and Actor tables
 # so you can run the seed file multiple times without having duplicate entries in your database
 puts "Deleting movie/actor data..."
+Role.destroy_all
 Movie.destroy_all
 Actor.destroy_all
 
@@ -23,5 +24,8 @@ puts "Creating roles..."
 # * and a role belongs to an actor.                         *
 # ***********************************************************
 # Create Roles Here
-
+role1 = Role.create(movie_id: mean_girls.id, actor_id: scary_spice.id, character_name: "Batman", salary: 100)
+role2 = Role.create(movie_id: spice_world.id, actor_id: tina_fey.id, character_name: "Spiderman", salary: 200)
+role3 = Role.create(movie_id: mean_girls.id, actor_id: baby_spice.id, character_name: "Wolfman", salary: 300)
+role4 = Role.create(movie_id: spice_world.id, actor_id: ginger_spice.id, character_name: "Dogman", salary: 100)
 puts "Seeding done!"
